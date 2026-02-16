@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgroBio Innovations | Inspired by nature, for a better world</title>
+    <meta name="description" content="Pioneering sustainable solutions through insect biology. From plastic biodegradation to biological pest control, we harness nature's power for agriculture and the environment.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;600;700&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --forest-green: #2D5016;
+            --sage-green: #6B8E4E;
+            --golden-amber: #D4A574;
+            --warm-yellow: #E8C468;
+            --cream: #F5F1E8;
+            --warm-beige: #E8DCC8;
+            --terracotta: #B85C38;
+            --soft-gray: #4A4A4A;
+            --white: #FFFFFF;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Work Sans', sans-serif;
+            color: var(--soft-gray);
+            line-height: 1.7;
+            background: var(--cream);
+        }
+        
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Crimson Pro', serif;
+            color: var(--forest-green);
+            font-weight: 600;
+            line-height: 1.3;
+        }
+        
+        h1 { font-size: clamp(2.5rem, 5vw, 4.5rem); font-weight: 700; }
+        h2 { font-size: clamp(2rem, 4vw, 3.5rem); margin-bottom: 1.5rem; }
+        h3 { font-size: clamp(1.5rem, 3vw, 2.2rem); margin-bottom: 1rem; }
+        h4 { font-size: clamp(1.2rem, 2.5vw, 1.6rem); margin-bottom: 0.8rem; }
+        
+        p {
+            margin-bottom: 1.2rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        a {
+            color: inherit;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        /* Header / Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(245, 241, 232, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(107, 142, 78, 0.1);
+        }
+        
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .logo-icon {
+            width: 45px;
+            height: 45px;
+        }
+        
+        .logo-text {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--forest-green);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            font-weight: 500;
+            color: var(--sage-green);
+            position: relative;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--golden-amber);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        /* Mobile Menu Toggle */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+        
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: var(--forest-green);
+            transition: all 0.3s ease;
+        }
+        
+        /* Hero Section */
+        .hero {
+            margin-top: 85px;
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--cream) 0%, var(--warm-beige) 100%);
+            position: relative;
+            overflow: hidden;
+            padding: 4rem 2rem;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(107, 142, 78, 0.08) 0%, transparent 70%);
+            top: -200px;
+            right: -200px;
+            animation: float 20s ease-in-out infinite;
+        }
+        
+        .hero::after {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(212, 165, 116, 0.06) 0%, transparent 70%);
+            bottom: -100px;
+            left: -100px;
+            animation: float 15s ease-in-out infinite reverse;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(30px, -30px) rotate(5deg); }
+            50% { transform: translate(-20px, 20px) rotate(-5deg); }
+            75% { transform: translate(20px, 30px) rotate(3deg); }
+        }
+        
+        .hero-content {
+            max-width: 900px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .hero h1 {
+            margin-bottom: 1.5rem;
+            color: var(--forest-green);
+            font-style: italic;
+        }
+        
+        .hero-tagline {
+            font-size: clamp(1.1rem, 2vw, 1.4rem);
+            color: var(--sage-green);
+            margin-bottom: 3rem;
+            line-height: 1.7;
+            font-weight: 400;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            font-size: 1rem;
+            display: inline-block;
+        }
+        
+        .btn-primary {
+            background: var(--forest-green);
+            color: var(--white);
+        }
+        
+        .btn-primary:hover {
+            background: var(--sage-green);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(45, 80, 22, 0.2);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--forest-green);
+            border: 2px solid var(--forest-green);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--forest-green);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+        
+        /* Section Styling */
+        section {
+            padding: 6rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .section-intro {
+            max-width: 800px;
+            margin: 0 auto 4rem;
+            text-align: center;
+        }
+        
+        .section-intro p {
+            font-size: 1.2rem;
+            color: var(--sage-green);
+        }
+        
+        /* About Section */
+        #about {
+            background: var(--white);
+        }
+        
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            margin-top: 4rem;
+        }
+        
+        .about-card {
+            background: var(--cream);
+            padding: 2.5rem;
+            border-radius: 15px;
+            border-left: 4px solid var(--golden-amber);
+            transition: all 0.3s ease;
+        }
+        
+        .about-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(45, 80, 22, 0.1);
+        }
+        
+        .about-card h4 {
+            color: var(--forest-green);
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+        
+        .about-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        
+        /* Projects Section */
+        #projects {
+            background: linear-gradient(135deg, var(--cream) 0%, var(--warm-beige) 100%);
+        }
+        
+        .projects-container {
+            display: grid;
+            gap: 4rem;
+            margin-top: 4rem;
+        }
+        
+        .project-card {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(45, 80, 22, 0.08);
+            transition: all 0.4s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(45, 80, 22, 0.15);
+        }
+        
+        .project-content {
+            padding: 3rem;
+        }
+        
+        .project-label {
+            display: inline-block;
+            background: var(--sage-green);
+            color: var(--white);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .project-card h3 {
+            color: var(--forest-green);
+            margin-bottom: 1.5rem;
+        }
+        
+        .project-card h4 {
+            color: var(--sage-green);
+            margin-top: 2rem;
+            font-size: 1.2rem;
+        }
+        
+        .project-card ul {
+            margin: 1rem 0 1rem 1.5rem;
+            line-height: 2;
+        }
+        
+        .project-card li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .status-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--golden-amber) 0%, var(--warm-yellow) 100%);
+            color: var(--white);
+            padding: 0.5rem 1.2rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-top: 1.5rem;
+        }
+        
+        /* Team Section */
+        #team {
+            background: var(--white);
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+        
+        .team-card {
+            background: var(--cream);
+            border-radius: 15px;
+            padding: 2.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .team-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--golden-amber);
+            box-shadow: 0 15px 40px rgba(45, 80, 22, 0.1);
+        }
+        
+        .team-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--sage-green) 0%, var(--golden-amber) 100%);
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--white);
+            font-weight: 600;
+        }
+        
+        .team-name {
+            font-size: 1.5rem;
+            color: var(--forest-green);
+            margin-bottom: 0.5rem;
+        }
+        
+        .team-role {
+            color: var(--sage-green);
+            font-style: italic;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+        
+        .team-bio {
+            color: var(--soft-gray);
+            line-height: 1.7;
+            font-size: 1rem;
+        }
+        
+        /* Collaborate Section */
+        #collaborate {
+            background: linear-gradient(135deg, var(--forest-green) 0%, var(--sage-green) 100%);
+            color: var(--white);
+        }
+        
+        #collaborate h2,
+        #collaborate h3,
+        #collaborate h4 {
+            color: var(--white);
+        }
+        
+        #collaborate p,
+        #collaborate li {
+            color: rgba(255, 255, 255, 0.95);
+        }
+        
+        .collaborate-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .collaboration-types {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .collab-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .collab-card:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-5px);
+        }
+        
+        .collab-card h4 {
+            color: var(--warm-yellow);
+            margin-bottom: 1rem;
+        }
+        
+        /* Contact Section */
+        #contact {
+            background: var(--white);
+        }
+        
+        .contact-content {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .contact-form {
+            margin-top: 3rem;
+            display: grid;
+            gap: 1.5rem;
+        }
+        
+        .form-group {
+            text-align: left;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--forest-green);
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid var(--warm-beige);
+            border-radius: 10px;
+            font-family: 'Work Sans', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: var(--cream);
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--sage-green);
+            background: var(--white);
+        }
+        
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .contact-email {
+            font-size: 1.3rem;
+            color: var(--forest-green);
+            font-weight: 600;
+            margin: 2rem 0;
+        }
+        
+        .contact-email a {
+            color: var(--sage-green);
+            text-decoration: underline;
+        }
+        
+        .contact-email a:hover {
+            color: var(--golden-amber);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--forest-green);
+            color: rgba(255, 255, 255, 0.9);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .footer-logo {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+        
+        .footer-tagline {
+            font-style: italic;
+            color: var(--warm-yellow);
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+        
+        .footer-copyright {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-top: 2rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(245, 241, 232, 0.98);
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1.5rem;
+                border-top: 1px solid rgba(107, 142, 78, 0.2);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .menu-toggle {
+                display: flex;
+            }
+            
+            .hero {
+                margin-top: 80px;
+                min-height: 70vh;
+                padding: 3rem 1.5rem;
+            }
+            
+            section {
+                padding: 4rem 1.5rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .team-grid,
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Smooth scroll offset for fixed header */
+        section {
+            scroll-margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header / Navigation -->
+    <header>
+        <nav>
+            <div class="logo">
+                <svg class="logo-icon" width="45" height="45" viewBox="0 0 120 120">
+                    <g transform="translate(60, 60)">
+                        <polygon points="0,-30 25.98,-15 25.98,15 0,30 -25.98,15 -25.98,-15" 
+                                 fill="#2D5016" opacity="0.9"/>
+                        <polygon points="0,-60 25.98,-45 25.98,-15 0,0 -25.98,-15 -25.98,-45" 
+                                 fill="#6B8E4E" opacity="0.6"/>
+                        <polygon points="51.96,-30 77.94,-15 77.94,15 51.96,30 25.98,15 25.98,-15" 
+                                 fill="#D4A574" opacity="0.6"/>
+                        <polygon points="-51.96,-30 -25.98,-15 -25.98,15 -51.96,30 -77.94,15 -77.94,-15" 
+                                 fill="#E8C468" opacity="0.6"/>
+                    </g>
+                </svg>
+                <span class="logo-text">AgroBio Innovations</span>
+            </div>
+            
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#team">Team</a></li>
+                <li><a href="#collaborate">Collaborate</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Inspired by nature, for a better world</h1>
+            <p class="hero-tagline">
+                Harnessing the power of insects and their microbiomes to create sustainable solutions for agriculture and the environment
+            </p>
+            <div class="cta-buttons">
+                <a href="#projects" class="btn btn-primary">Explore Our Projects</a>
+                <a href="#collaborate" class="btn btn-secondary">Partner With Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="section-intro">
+            <h2>Transforming Challenges into Opportunities Through Nature</h2>
+            <p>
+                At AgroBio Innovations, we believe nature holds the answers to some of our most pressing environmental and agricultural challenges. Through rigorous research and collaboration, we're developing innovative methods that harness insect biology to address critical issues.
+            </p>
+        </div>
+        
+        <div class="about-grid">
+            <div class="about-card">
+                <span class="about-icon">🔬</span>
+                <h4>Science-Driven</h4>
+                <p>
+                    Grounded in peer-reviewed research and academic partnerships, our innovations are backed by rigorous scientific methodology and continuous exploration.
+                </p>
+            </div>
+            
+            <div class="about-card">
+                <span class="about-icon">🌱</span>
+                <h4>Nature-Inspired</h4>
+                <p>
+                    We draw from billions of years of evolutionary innovation, working in harmony with natural processes rather than against them.
+                </p>
+            </div>
+            
+            <div class="about-card">
+                <span class="about-icon">🤝</span>
+                <h4>Collaborative</h4>
+                <p>
+                    Complex challenges require diverse expertise. We partner with researchers, institutions, and industry leaders to accelerate impact.
+                </p>
+            </div>
+            
+            <div class="about-card">
+                <span class="about-icon">🌍</span>
+                <h4>Impact-Focused</h4>
+                <p>
+                    Every project is designed with real-world applications in mind—solutions that can scale and make meaningful environmental change.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="section-intro">
+            <h2>Our Research Projects</h2>
+            <p>
+                Exploring innovative applications of insect biology to address environmental and agricultural challenges through sustainable, nature-based solutions.
+            </p>
+        </div>
+        
+        <div class="projects-container">
+            <!-- Project 1 -->
+            <div class="project-card">
+                <div class="project-content">
+                    <span class="project-label">Environmental Innovation</span>
+                    <h3>Plastic Biodegradation Through Larval Enzymes</h3>
+                    
+                    <h4>The Challenge</h4>
+                    <p>
+                        Plastic waste represents one of the most persistent environmental problems of our time. Traditional recycling methods are energy-intensive and often inefficient, leaving millions of tons of plastic to accumulate in landfills and ecosystems.
+                    </p>
+                    
+                    <h4>Our Approach</h4>
+                    <p>
+                        We're investigating the remarkable ability of certain insect larvae and their associated microbiomes to break down plastic polymers. These organisms have evolved enzymes capable of degrading materials that typically resist decomposition for centuries.
+                    </p>
+                    
+                    <p>Through collaborative research with academic institutions, we're working to:</p>
+                    <ul>
+                        <li>Identify and characterize the specific enzymes and microbial communities responsible for plastic degradation</li>
+                        <li>Understand the mechanisms by which these biological systems process different types of plastics</li>
+                        <li>Develop scalable methods to harness these capabilities for practical waste management applications</li>
+                        <li>Explore the potential for bio-based plastic processing that's more sustainable than conventional approaches</li>
+                    </ul>
+                    
+                    <span class="status-badge">Early-Stage Research</span>
+                </div>
+            </div>
+            
+            <!-- Project 2 -->
+            <div class="project-card">
+                <div class="project-content">
+                    <span class="project-label">Agricultural Solutions</span>
+                    <h3>Enhanced Biological Pest Control Through Insect Nutrition</h3>
+                    
+                    <h4>The Challenge</h4>
+                    <p>
+                        Biological pest control—using beneficial insects to manage agricultural pests—offers a sustainable alternative to chemical pesticides. However, the effectiveness of these programs depends heavily on the health, vitality, and reproduction rates of the beneficial insects being reared.
+                    </p>
+                    
+                    <h4>Our Approach</h4>
+                    <p>
+                        We're developing optimized diets for insects used in biological pest control programs. By understanding the nutritional requirements of these beneficial species, we can improve their rearing efficiency and effectiveness in the field.
+                    </p>
+                    
+                    <p>Our research focuses on:</p>
+                    <ul>
+                        <li>Analyzing the nutritional needs of key beneficial insect species at different life stages</li>
+                        <li>Formulating diets that enhance reproductive success, longevity, and pest-control effectiveness</li>
+                        <li>Testing diet formulations to optimize mass-rearing efficiency and reduce costs</li>
+                        <li>Developing practical, scalable feeding protocols for commercial insect rearing facilities</li>
+                    </ul>
+                    
+                    <span class="status-badge">Active Development</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team">
+        <div class="section-intro">
+            <h2>Our Team</h2>
+            <p>
+                United by curiosity and a commitment to nature-based solutions, we're working to bridge the gap between fundamental research and real-world impact.
+            </p>
+        </div>
+        
+        <div class="team-grid">
+            <!-- Team member template - Add your actual team members here -->
+            <div class="team-card">
+                <div class="team-photo">?</div>
+                <h3 class="team-name">Your Name</h3>
+                <p class="team-role">Founder & Research Director</p>
+                <p class="team-bio">
+                    Add your bio here - background, expertise, and what drives your work in insect-based sustainable solutions.
+                </p>
+            </div>
+            
+            <!-- Add more team members by duplicating the team-card div above -->
+            <div class="team-card">
+                <div class="team-photo">?</div>
+                <h3 class="team-name">Team Member</h3>
+                <p class="team-role">Role / Position</p>
+                <p class="team-bio">
+                    Brief bio covering background, expertise, and contribution to AgroBio Innovations' mission.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Collaborate Section -->
+    <section id="collaborate">
+        <div class="collaborate-content">
+            <div class="section-intro">
+                <h2>Partner With Us</h2>
+                <p>
+                    Join us in pioneering nature-based solutions for agriculture and the environment. The most impactful solutions emerge from collaboration.
+                </p>
+            </div>
+            
+            <div class="collaboration-types">
+                <div class="collab-card">
+                    <h4>Research Partnerships</h4>
+                    <p>
+                        Collaborative projects with academic institutions and research organizations exploring insect biology and environmental applications.
+                    </p>
+                </div>
+                
+                <div class="collab-card">
+                    <h4>Industry Collaborations</h4>
+                    <p>
+                        Working with companies in agriculture, waste management, and biotechnology to develop and scale practical solutions.
+                    </p>
+                </div>
+                
+                <div class="collab-card">
+                    <h4>Consulting Projects</h4>
+                    <p>
+                        Providing expertise in insect-based systems, biological pest control, and sustainable innovation.
+                    </p>
+                </div>
+                
+                <div class="collab-card">
+                    <h4>Funding & Investment</h4>
+                    <p>
+                        Connecting with supporters who share our vision for sustainable, science-driven environmental solutions.
+                    </p>
+                </div>
+            </div>
+            
+            <p style="text-align: center; margin-top: 3rem; font-size: 1.2rem;">
+                We're particularly excited about projects that push the boundaries of what's possible with insect biology and have clear pathways to real-world impact.
+            </p>
+            
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="#contact" class="btn btn-primary">Get in Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="contact-content">
+            <h2>Get in Touch</h2>
+            <p>We'd love to hear from you</p>
+            
+            <div class="contact-email">
+                For inquiries, collaborations, or general questions:<br>
+                <a href="mailto:contact@agrobioinnovations.com">contact@agrobioinnovations.com</a>
+            </div>
+            
+            <form class="contact-form" action="#" method="POST">
+                <div class="form-group">
+                    <label for="name">Name *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="organization">Organization / Affiliation</label>
+                    <input type="text" id="organization" name="organization">
+                </div>
+                
+                <div class="form-group">
+                    <label for="inquiry-type">Inquiry Type</label>
+                    <select id="inquiry-type" name="inquiry-type">
+                        <option>Research Partnership</option>
+                        <option>Industry Collaboration</option>
+                        <option>Consulting</option>
+                        <option>General Inquiry</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Message *</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+            </form>
+            
+            <p style="margin-top: 2rem; font-size: 0.95rem; color: var(--sage-green);">
+                We typically respond within 2-3 business days.
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">AgroBio Innovations</div>
+            <p class="footer-tagline">Inspired by nature, for a better world</p>
+            <p class="footer-copyright">
+                © 2026 AgroBio Innovations. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.querySelector('.nav-links').classList.remove('active');
+            });
+        });
+        
+        // Form submission (you'll need to connect this to your actual form handler)
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We will get back to you soon.\n\nNote: To make this form work, you will need to connect it to a form service like Formspree, Netlify Forms, or set up your own backend.');
+        });
+    </script>
+</body>
+</html>
